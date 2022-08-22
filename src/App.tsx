@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ListItem from './components/listItem';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <main className='container'>
+      <header className='header '>
+        <nav className='header__nav '>
+          <h1 className='header__nav__brand'>Blogr</h1>
+          <ul className='header__nav__list'>
+            {['Product', 'Company', 'Contact'].map((itemName, index) => (
+              <ListItem key={index} itemName={itemName} hrefUrl={'/'} />
+            ))}
+          </ul>
+          <div className='header__nav__auth'>
+            <span className='header__nav__auth-login'>Login</span>
+            <span className='header__nav__auth-signup btn btn--primary'>
+              Sign Up
+            </span>
+          </div>
+        </nav>
       </header>
-    </div>
+    </main>
   );
 }
 
