@@ -9,8 +9,33 @@ function App() {
         <nav className='header__nav '>
           <h1 className='header__nav__brand'>Blogr</h1>
           <ul className='header__nav__list'>
-            {['Product', 'Company', 'Contact'].map((itemName, index) => (
-              <ListItem key={index} itemName={itemName} hrefUrl={'/'} />
+            {[
+              {
+                title: 'Product',
+                dropdown: [
+                  { title: 'Demo', hrefUrl: '/' },
+                  { title: 'Reviews', hrefUrl: '/' },
+                  { title: 'News', hrefUrl: '/' },
+                ],
+              },
+              {
+                title: 'Company',
+                dropdown: [
+                  { title: 'Location', hrefUrl: '/' },
+                  { title: 'About', hrefUrl: '/' },
+                  { title: 'Links', hrefUrl: '/' },
+                ],
+              },
+              {
+                title: 'Connect',
+                dropdown: [
+                  { title: 'Contact', hrefUrl: '/' },
+                  { title: 'Newsletter', hrefUrl: '/' },
+                  { title: 'LinkedIn', hrefUrl: '/' },
+                ],
+              },
+            ].map((item, index) => (
+              <ListItem key={index} item={item} />
             ))}
           </ul>
           <div className='header__nav__auth'>

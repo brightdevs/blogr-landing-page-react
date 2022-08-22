@@ -1,17 +1,32 @@
 import React from 'react';
 
 type Props = {
-  itemName: string;
-  hrefUrl: string;
+  item: {
+    title: string;
+    dropdown: {
+      title: string;
+      hrefUrl: string;
+    }[];
+  };
 };
 
-const listItem = ({ itemName, hrefUrl = '/' }: Props) => {
+const listItem = ({ item }: Props) => {
   return (
     <>
       <li className='header__nav__list__item'>
-        <a href={hrefUrl} className='header__nav__list__item__link'>
-          {itemName}
-        </a>
+        <div className='dropdown'>
+          <button className='dropbtn btn--unstyled'>
+            {item.title}
+            <i className='fa fa-caret-down' />
+          </button>
+          <div className='dropdown-content'>
+            {item.dropdown.map((item, index) => (
+              <a key={index} href={item.hrefUrl}>
+                {item.title}
+              </a>
+            ))}
+          </div>
+        </div>
       </li>
     </>
   );
