@@ -36,6 +36,8 @@ $fw-700: 700;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3", endColorstr="#fdbb2d", GradientType=1);
 }
 
+
+
 /* mixins */
 
 @mixin bg-image($image, $size) {
@@ -100,7 +102,7 @@ $fw-700: 700;
 
         &:hover {
             background-color: $primary-white;
-            color: $primary-grayish-blue;
+            color: $primary-light-red;
         }
     }
 

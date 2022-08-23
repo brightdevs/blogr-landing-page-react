@@ -130,7 +130,8 @@
         background-image: url('./images/bg-pattern-intro-desktop.svg');
         background-size: 300%;
         background-position: center;
-        padding: 0 1rem;
+        padding: 0 1rem 1rem 1rem;
+
 
         &__nav {
             @include utils.flex(row, space-between, center);
@@ -212,7 +213,32 @@
             }
         }
 
+        &__content {
+            @include utils.flex(column, center, center);
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            color: utils.$primary-white;
+            margin-top: 1rem;
+            min-height: calc(100% - 6.25rem);
 
+            h1 {
+                font-size: 3rem;
+                font-weight: utils.$fw-600;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            &__links {
+                display: inline-grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: .5rem;
+            }
+        }
 
 
 
@@ -236,6 +262,20 @@
                             background-image: url('./images/icon-close.svg');
                         }
                     }
+                }
+
+                &__content {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+
+
+
+
                 }
 
 
