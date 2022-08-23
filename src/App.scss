@@ -1,8 +1,12 @@
 @use './styles/reset.scss';
+@use './styles/collapsable.component.scss';
 @use './styles/utils.scss' as utils;
 
 
+.unstyled {
 
+    list-style: none;
+}
 
 .container {
     display: grid;
@@ -12,6 +16,79 @@
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
 
+    }
+
+    .overlay {
+        // create a marging minus 100px
+        margin-top: calc(100px - 1rem);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 100px);
+
+        z-index: 1;
+        @include utils.flex(column, center, center);
+
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+
+
+        &__content {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 20rem;
+            min-height: 32rem;
+            border-radius: .2rem;
+            background-color: rgb(255, 255, 255);
+            padding: 1rem;
+            @include utils.flex(column, center, center);
+
+            button {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            &__collapsable {
+                @include utils.flex(column, center, center);
+                padding: .5rem;
+                width: 100%;
+                transition: max-height 0.3s ease-in-out;
+
+                &__links {
+                    @include utils.flex(column, center, center);
+                    padding: 0;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                    width: 100%;
+                    transition: max-height 0.3s ease-in-out;
+
+                    a:nth-child(n) {
+                        // height: 3rem;
+                        @include utils.flex(row, center, center);
+                        padding: 0.5rem 1rem;
+                        border-radius: .2rem;
+                        background-color: #f1f1f1;
+                        color: utils.$primary-very-dark-blue;
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        text-decoration: none;
+                        transition: all 0.2s ease-in-out;
+                        width: 100%;
+
+                        &:hover {
+                            background-color: #e1e1e1;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     .header {
@@ -94,6 +171,17 @@
                 @include utils.flex(row, space-evenly, center);
                 flex: 1;
             }
+
+            &__mobile-icon {
+                display: none;
+                background-image: url('./images/icon-hamburger.svg');
+                width: 2rem;
+                height: 2rem;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+            }
         }
 
 
@@ -109,7 +197,20 @@
                     &__auth {
                         display: none;
                     }
+
+                    &__mobile-icon {
+                        display: flex;
+                        display: block;
+                        // creat a transition effect
+                        transition: all 0.3s ease-in-out;
+
+                        &.open {
+                            background-image: url('./images/icon-close.svg');
+                        }
+                    }
                 }
+
+
             }
 
         }

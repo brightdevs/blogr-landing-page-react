@@ -13,9 +13,9 @@ type Props = {
 const listItem = ({ item }: Props) => {
   return (
     <>
-      <li className='header__nav__list__item'>
+      <li className='unstyled'>
         <div className='dropdown'>
-          <button className='dropbtn btn--unstyled'>
+          <button className='btn--unstyled'>
             {item.title}
             <i className='fa fa-caret-down' />
           </button>
