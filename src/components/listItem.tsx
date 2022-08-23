@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 
 type Props = {
   item: {
@@ -10,7 +10,7 @@ type Props = {
   };
 };
 
-const listItem = ({ item }: Props) => {
+const listItem: FunctionComponent<Props> = ({ item }: Props) => {
   return (
     <>
       <li className='unstyled'>
