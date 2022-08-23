@@ -16,8 +16,10 @@ export const handleClick = (
         nextSibling.style.maxHeight = '';
         targetElement.classList.remove('open');
       } else {
-        targetElement.classList.add('open');
-        nextSibling.style.maxHeight = '100%';
+        setTimeout(() => {
+          targetElement.classList.add('open');
+          nextSibling.style.maxHeight = '100%';
+        }, 500);
       }
     }
   }

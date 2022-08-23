@@ -42,7 +42,29 @@
             border-radius: .2rem;
             background-color: rgb(255, 255, 255);
             padding: 1rem;
-            @include utils.flex(column, center, center);
+            @include utils.flex(column, space-around, center);
+
+            &__collapsable__wrapper,
+            &__auth__wrapper {
+                width: 100%;
+            }
+
+            &__collapsable__wrapper {
+                flex: 1.2;
+                @include utils.flex(column, center, center);
+            }
+
+            &__auth__wrapper {
+                flex: 1;
+                @include utils.flex(column, center, center);
+                font-weight: bold;
+                font-size: 1.2rem;
+
+                *:nth-child(n) {
+                    margin: .5rem 0;
+                    cursor: pointer;
+                }
+            }
 
             button {
                 font-weight: bold;
@@ -83,6 +105,12 @@
                     }
                 }
             }
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid utils.$primary-grayish-blue;
+            margin: 0;
         }
 
         &.active {

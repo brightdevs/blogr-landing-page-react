@@ -13,12 +13,20 @@ const overlay: FunctionComponent<Props> = (props) => {
       className={`
         overlay ${props.isOpen ? 'active' : ''}
     `}
-      //   onClick={props.toggle}
     >
       <div className='overlay__content'>
-        {Links.map((item, index) => (
-          <Collapsable key={index} item={item} handleClick={handleClick} />
-        ))}
+        <div className='overlay__content__collapsable__wrapper'>
+          {Links.map((item, index) => (
+            <Collapsable key={index} item={item} handleClick={handleClick} />
+          ))}
+        </div>
+        <div className='overlay__content__auth__wrapper'>
+          <hr style={{ width: '100%' }} />
+          <span className='header__nav__auth-login'>Login</span>
+          <span className='header__nav__auth-signup btn btn--alert'>
+            Sign Up
+          </span>
+        </div>
       </div>
     </div>
   );

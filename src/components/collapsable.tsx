@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 type Props = {
   item: {
@@ -11,7 +11,10 @@ type Props = {
   handleClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
-const Collapsable = ({ item, handleClick }: Props) => {
+const Collapsable: FunctionComponent<Props> = ({
+  item,
+  handleClick,
+}: Props) => {
   return (
     <div className='overlay__content__collapsable'>
       <button
