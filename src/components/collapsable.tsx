@@ -18,7 +18,7 @@ const Collapsable = ({ item, handleClick }: Props) => {
         onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
           handleClick(event);
         }}
-        className='btn--unstyled'
+        className='btn--unstyled overlay__content__collapsable__btn'
       >
         {item.title}
       </button>

@@ -3,7 +3,7 @@ import ListItem from './components/listItem';
 import './App.scss';
 import Links from './data/links.data';
 import useToggle from './hooks/useToggle';
-import Overlay from './components/overlay';
+import Overlay from './components/overlay.component/overlay';
 function App() {
   const [isOpen, toggle] = useToggle(false);
 
