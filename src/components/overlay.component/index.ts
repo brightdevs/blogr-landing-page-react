@@ -22,3 +22,15 @@ export const handleClick = (
     }
   }
 };
+
+export const closeAllOpenDropdowns = () => {
+  const collapsableElements = document.querySelectorAll(
+    '.overlay__content__collapsable__btn'
+  );
+
+  for (let i = 0; i < collapsableElements.length; i++) {
+    const nextSibling = collapsableElements[i].nextSibling as HTMLDivElement;
+    nextSibling.style.maxHeight = '';
+    collapsableElements[i].classList.remove('open');
+  }
+};

@@ -4,6 +4,7 @@ import './App.scss';
 import Links from './data/links.data';
 import useToggle from './hooks/useToggle';
 import Overlay from './components/overlay.component/overlay';
+import { closeAllOpenDropdowns } from './components/overlay.component/index';
 function App() {
   const [isOpen, toggle] = useToggle(false);
 
@@ -25,7 +26,7 @@ function App() {
           </div>
           <span
             id='burger'
-            onClick={() => toggle()}
+            onClick={() => [toggle(), closeAllOpenDropdowns()]}
             className={`header__nav__mobile-icon ${isOpen ? 'open' : ''}`}
           ></span>
         </nav>
