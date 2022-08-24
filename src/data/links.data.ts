@@ -1,4 +1,4 @@
-export default [
+const links = [
   {
     title: 'Product',
     dropdown: [
@@ -24,3 +24,4 @@ export default [
     ],
   },
 ];
+export default links;

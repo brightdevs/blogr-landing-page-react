@@ -58,25 +58,7 @@ So many take aways from the challenge:
 * For the hamburger menu, I wanted to create everything from scratch using TS and React, such a good way to understand the process.
 * The mobile first approach was a curve ball. Lots of new concepts and techniques learned in the process.
 
-To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
@@ -95,7 +77,7 @@ For the following challenges this is what I want to improve
 
 ## Author
 
-- Website - [Add your name here](https://brightdevs.com/)
+- Website - [Bright Devs](https://brightdevs.com/)
 - Frontend Mentor - [@brightdevs](https://www.frontendmentor.io/profile/brightdevs)
 - Twitter - [@bright_devs](https://www.twitter.com/bright_devs)
 
