@@ -147,6 +147,20 @@
             }
         }
 
+        .footer {
+            grid-column: 1/5;
+
+            &__wrapper {
+                grid-template-columns: repeat(4, 1fr);
+
+                h4,
+                ul {
+                    text-align: start !important;
+                }
+            }
+
+        }
+
     }
 
 
@@ -476,9 +490,6 @@
 
     .tooling-section {
 
-
-
-
         &__wrapper {
             display: grid;
             grid-template-columns: 1fr, 1fr;
@@ -501,6 +512,41 @@
                 }
             }
 
+        }
+    }
+
+    .footer {
+        background-color: utils.$primary-very-dark-blue;
+        color: utils.$primary-white;
+        border-top-right-radius: 3rem;
+
+        &__wrapper {
+            padding: 5rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr, 1fr;
+
+            &__brand {
+                text-align: center;
+            }
+
+            &__links {
+
+                display: flex;
+                flex-direction: column;
+
+                h4,
+                ul {
+                    text-align: center;
+                    margin: 2rem 0 0 0;
+                }
+
+            }
+
+            ul {
+                list-style: none;
+                padding: 0 !important;
+                margin: 0.5rem 0 0.5rem 0 !important;
+            }
         }
     }
 

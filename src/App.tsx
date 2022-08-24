@@ -74,6 +74,39 @@ function App() {
           </div>
         </div>
       </section>
+      <footer className='footer'>
+        <div className='footer__wrapper'>
+          <div className='footer__wrapper__brand'>
+            <h1>Blogr</h1>
+          </div>
+          {[
+            {
+              title: 'Product',
+              links: [
+                'Overview',
+                'Pricing',
+                'Marketing',
+                'Marketplace',
+                'Features',
+                'Integrations',
+              ],
+            },
+            { title: 'Company', links: ['About', 'Team', 'Blog', 'Careers'] },
+            { title: 'Connect', links: ['Contact', 'Newsletter', 'LinkedIn'] },
+          ].map((e, i) => {
+            return (
+              <div className='footer__wrapper__links' key={i}>
+                <h4>{e.title}</h4>
+                <ul>
+                  {e.links.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </footer>
 
       <Overlay isOpen={isOpen} toggle={toggle} />
     </main>
