@@ -35,6 +35,7 @@
         .big-title {
             grid-column: 1 / span 4;
         }
+
     }
 
 }
@@ -51,16 +52,13 @@
             grid-column: 1 / span 4;
         }
 
-        // .sidebar {
-        //     grid-column: 1 / span 2;
-        // }
-
-        // .section-img {
-        //     grid-column: 3 / span 2;
-        // }
-
         .intro-title {
             grid-column: 1 / span 4;
+
+            h1 {
+                position: relative;
+                top: 130px;
+            }
         }
 
         .intro-content {
@@ -78,6 +76,45 @@
 
             img {
                 display: none;
+            }
+        }
+
+        .infrastructure-section {
+            grid-column: 1/ 5;
+            margin: 0 !important;
+
+            &__wrapper {
+                grid-template-columns: repeat(4, 1fr);
+                background-image: url('./images/bg-pattern-circles.svg');
+                background-size: 700px !important;
+                background-position: left 1em top -24em !important;
+                background-repeat: no-repeat !important;
+
+
+
+
+                &__img {
+                    grid-column: 1/3;
+                    position: relative;
+                    padding: 11rem 0 !important;
+
+                    img {
+                        position: absolute;
+                        top: -6rem !important;
+
+                    }
+
+                }
+
+                &__content {
+                    grid-column: 3/5;
+                    padding: 5rem 0 !important;
+
+                    div {
+                        height: 100%;
+                        @include utils.flex(column, center, flex-start);
+                    }
+                }
             }
         }
     }
@@ -365,13 +402,46 @@
     .intro-img {
         grid-row: 3;
         padding: 1rem;
-        text-align: center;
-        // min-height: 780px;
-        // background-image: none;
-        // background-size: 800px;
-        // background-position: right -20em bottom 10px;
-        // background-repeat: no-repeat;
 
+    }
+
+    .infrastructure-section {
+        background-color: utils.$primary-very-dark-blue;
+        color: utils.$primary-white;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        margin: 17rem 0 2rem 0;
+
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr, 1fr;
+            padding: 1rem;
+            background-image: url('./images/bg-pattern-circles.svg');
+            background-size: 650px;
+            background-position: right -1em top -15em;
+            background-repeat: no-repeat;
+
+
+            &__img {
+                // padding: 1rem;
+                position: relative;
+                padding: 10rem 0;
+
+                img {
+                    position: absolute;
+                    top: -16rem;
+                }
+            }
+
+            &__content {
+                padding: 0 0 5rem 0;
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
     }
 
 
