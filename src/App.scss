@@ -161,6 +161,18 @@
                 ul {
                     text-align: start !important;
                 }
+
+                a {
+                    color: #fff !important;
+                    // remove the underline
+                    text-decoration: none;
+
+                    // hovering add the underline
+                    &:hover {
+                        text-decoration: underline;
+                        opacity: .6;
+                    }
+                }
             }
 
         }

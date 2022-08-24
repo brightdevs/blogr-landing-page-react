@@ -99,7 +99,9 @@ function App() {
                 <h4>{e.title}</h4>
                 <ul>
                   {e.links.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index}>
+                      <a href='/'>{item}</a>
+                    </li>
                   ))}
                 </ul>
               </div>
