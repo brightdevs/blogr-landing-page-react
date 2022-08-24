@@ -153,6 +153,10 @@
             &__wrapper {
                 grid-template-columns: repeat(4, 1fr);
 
+                &__links {
+                    @include utils.flex(column, flex-start, flex-start);
+                }
+
                 h4,
                 ul {
                     text-align: start !important;
